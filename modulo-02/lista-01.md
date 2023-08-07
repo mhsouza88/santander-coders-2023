@@ -147,14 +147,27 @@ multiplicaValores(string, numero)
 ````
 #### Explicação: No JavaScript, ao multiplicar uma string que representa um número com um número real, a string é automaticamente convertida em número. Portanto, "10" torna-se 10 e, quando multiplicado por 5, o resultado é 50.
 
-### 
+### 12) Converta a string "123" em um número inteiro e armazene-o em uma variável.
 ````javascript
+let texto = "123"
+const converteTextoParaInteiro = (texto) => {
+    let numero = parseInt(texto)
+    console.log(`Texto convertido para número inteiro: ${numero}.`)
+}
 
+converteTextoParaInteiro(texto)
 ````
 
-### 
+###  13) Escreva um programa que adicione um número e uma string.
 ````javascript
+let numero = 5
+let texto = "45"
+const adicionaNumeroETexto = (num, str) => {
+    let resultado = num + str
+    console.log(`Resultado da adição de ${numero} e ${texto}: ${resultado}.`)
+}
 
+adicionaNumeroETexto(numero, texto)
 ````
 
 ### 
