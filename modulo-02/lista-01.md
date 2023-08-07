@@ -65,3 +65,56 @@ const concatenaListas = (lista01, lista02) => {
 
 concatenaListas(lista01, lista02)
 ````
+
+### 06) Escreva um programa que calcule a média dos valores em um array utilizando a função reduce() e length. 
+````javascript
+let listaNumeros = [12, 25, 40, 75, 122]
+const calculaMedia = (numeros) => {
+    let soma = numeros.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0)
+    return soma / numeros.length
+}
+
+let media = calculaMedia(listaNumeros)
+console.log(`A lista é composta por ${listaNumeros} e sua média de valores é ${media}.`)
+````
+
+### 07) Crie uma função que retorne a data e hora atuais no formato legível: "Dia/Mês/Ano Hora:Minuto:Segundo".
+````javascript
+const dataHora = () => {
+    let hoje = new Date()
+    let dia = hoje.getDate()
+    let mes = hoje.getMonth() + 1
+    let ano = hoje.getFullYear()
+    let hora = hoje.getHours()
+    let minutos = hoje.getMinutes()
+    let segundos = hoje.getSeconds()
+    return `Hoje é ${dia}/${mes}/${ano} e a hora atual é ${hora}:${minutos}:${segundos}.`
+}
+
+console.log(dataHora())
+````
+
+### 08) Implemente um programa que encontre o maior valor em um array usando a função Math.max(). 
+````javascript
+const maiorValorDoArray = (numeros) => Math.max(...numeros)
+let arrayNumeros = [3, 34, 240, 12, 75, 122, 30, 35, 42, 45, 58]
+let maximo = maiorValorDoArray(arrayNumeros)
+console.log(`O array é composto por ${arrayNumeros} e seu maior número é ${maximo}.`)
+````
+
+### 09) Escreva uma função que gere um número inteiro aleatório entre dois valores dados como argumentos. 
+````javascript
+let minimo = 23
+let maximo = 57
+const numeroAleatorio = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+let aleatorio = numeroAleatorio(minimo, maximo)
+console.log(`Um valor aleatório entre ${minimo} e ${maximo} seria ${aleatorio}!`)
+````
+
+### 
+````javascript
+
+````
