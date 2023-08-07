@@ -114,6 +114,49 @@ let aleatorio = numeroAleatorio(minimo, maximo)
 console.log(`Um valor aleatório entre ${minimo} e ${maximo} seria ${aleatorio}!`)
 ````
 
+### 10) Crie um programa que verifique se um número dado pelo usuário é um número primo usando uma função.
+````javascript
+let numero = parseInt(prompt("Digite um número para verificar se ele é um número primo!"))
+const ehPrimoOuNao = (num) => {
+    if (num <= 1) {
+        window.alert(`${num} não é um número primo.`)
+        return
+    }
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            window.alert(`${num} não é um número primo.`)
+            return
+        }
+    }
+    window.alert(`${numero} é um número primo!`)
+}
+
+ehPrimoOuNao(numero)
+````
+
+### 11) Declare uma variável com valor "5" (string) e outra variável com valor 2 (número). Multiplique as duas variáveis e explique o resultado.
+````javascript
+let string = "10"
+let numero = 5
+const multiplicaValores = (str, num) => {
+    let resultado = str * num
+    console.log(`A string é ${string} e o número é ${numero}, e o resultado da multiplicação desses valores é ${resultado}.`)
+}
+
+multiplicaValores(string, numero)
+````
+#### Explicação: No JavaScript, ao multiplicar uma string que representa um número com um número real, a string é automaticamente convertida em número. Portanto, "10" torna-se 10 e, quando multiplicado por 5, o resultado é 50.
+
+### 
+````javascript
+
+````
+
+### 
+````javascript
+
+````
+
 ### 
 ````javascript
 
