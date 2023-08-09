@@ -210,7 +210,7 @@ verificaSeEhFuncao(ehDoTipoFuncao)
 ````javascript
 const calculaExpressao = () => {
     let resultado = (10 + 5) * 3 / 20
-    console.log(`Resultado da expressão (10 + 5) * 3 ÷ 20: ${resultado}`)
+    console.log(`O resultado da expressão (10 + 5) * 3 ÷ 20 é ${resultado}.`)
 }
 
 calculaExpressao()
@@ -233,29 +233,47 @@ verificaSeEhPositivoEImpar(9)
 
 ### 19) Implemente um programa que determine se um ano fornecido pelo usuário é bissexto ou não, considerando as regras: (a) Anos divisíveis por 4 são bissextos; (b) Anos divisíveis por 100 não são bissextos, a menos que também sejam divisíveis por 400.
 ````javascript
-let anoUsuario = parseInt(prompt("Digite um ano para verificar se ele é bissexto ou não!"))
+let ano = parseInt(prompt("Digite um ano para verificar se ele é bissexto ou não!"))
 const verificaAnoBissexto = () => {
-    if ((anoUsuario % 4 === 0 && anoUsuario % 100 !== 0) || (anoUsuario % 400 === 0)) {
-        window.alert(`O ano de ${anoUsuario} é bissexto!`)
+    if ((ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0)) {
+        window.alert(`O ano de ${ano} é bissexto!`)
     } else {
-        window.alert(`O ano de ${anoUsuario} não é bissexto!`)
+        window.alert(`O ano de ${ano} não é bissexto!`)
     }
 }
 
 verificaAnoBissexto()
 ````
 
-### 20) 
+### 20) Escreva uma função que determine se uma pessoa tem permissão para entrar em um clube: idade mínima de 18 anos e não estar na lista de membros banidos (use operadores lógicos). 
 ````javascript
+const idadeMinima = 18
+const listaBanidos = ["Cláudia"]
+const entraNoClubeOuNao = (idade, nome) => {
+    if (idade >= idadeMinima && listaBanidos.indexOf(nome) === -1) {
+        console.log(`${nome} pode entrar no clube!`)
+    } else {
+        console.log(`${nome} não pode entrar no clube!`)
+    }
+}
 
+entraNoClubeOuNao(18, "João")
+console.log(`Lista de banidos: ${listaBanidos}`)
 ````
 
-### 21) 
+### 21) Crie um programa que simule um sistema de login. Peça ao usuário um nome de usuário e uma senha, e verifique se correspondem aos valores esperados.
 ````javascript
+const nomeEsperado = "admin"
+const senhaEsperada = "12345"
+const usuario = "admin"
+const senha = "12345"
+const fazLogin = (usuario, senha) => {
+    if (usuario === nomeEsperado && senha === senhaEsperada) {
+        console.log("Seja bem-vindo!")
+    } else {
+        console.log("Nome de usuário ou senha incorretos.")
+    }
+}
 
-````
-
-### 22) 
-````javascript
-
+fazLogin(usuario, senha)
 ````
