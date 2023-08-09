@@ -170,6 +170,52 @@ const adicionaNumeroETexto = (num, str) => {
 adicionaNumeroETexto(numero, texto)
 ````
 
+### 14) Explique o resultado e discuta a coerção que ocorre.
+#### Explicação: Quando se tenta somar um número e uma string no JavaScript, o JavaScript transforma o número em texto e "cola" os dois textos juntos (eles são concatenados).
+
+### 15) Declare uma variável com o valor null e outra variável com o valor undefined. Verifique se são iguais em valor e tipo.
+````javascript
+let valorNull = null
+let valorUndefined = undefined
+const verificaIgualdade = () => {
+    if (valorNull === valorUndefined) {
+        console.log("São iguais em valor e tipo!")
+    } else if (valorNull == valorUndefined) {
+        console.log("São iguais em valor, mas não em tipo!")
+    } else {
+        console.log("Não são iguais em valor nem em tipo!")
+    }
+}
+
+verificaIgualdade()
+````
+
+### 16) Crie um programa que determine se uma variável é do tipo função usando o operador typeof.
+````javascript
+let ehDoTipoFuncao = function() {
+    console.log("É uma função!")
+}
+const verificaSeEhFuncao = (ehDoTipoFuncao) => {
+    if (typeof ehDoTipoFuncao === "function") {
+        console.log("A variável é do tipo função.")
+    } else {
+        console.log("A variável não é do tipo função.")
+    }
+}
+
+verificaSeEhFuncao(ehDoTipoFuncao)
+````
+
+### 
+````javascript
+
+````
+
+### 
+````javascript
+
+````
+
 ### 
 ````javascript
 
