@@ -206,17 +206,56 @@ const verificaSeEhFuncao = (ehDoTipoFuncao) => {
 verificaSeEhFuncao(ehDoTipoFuncao)
 ````
 
-### 
+### 17) Escreva um programa que calcule o resultado da expressão: (10 + 5) * 3 / 20.
+````javascript
+const calculaExpressao = () => {
+    let resultado = (10 + 5) * 3 / 20
+    console.log(`Resultado da expressão (10 + 5) * 3 ÷ 20: ${resultado}`)
+}
+
+calculaExpressao()
+````
+
+### 18) Crie uma função que verifique se um número é positivo e ímpar ao mesmo tempo.
+````javascript
+const verificaSeEhPositivoEImpar = (numero) => {
+    if (numero > 0 && numero % 2 !== 0) {
+        console.log(`${numero} é positivo e ímpar!`)
+    } else if (numero > 0 && numero % 2 === 0) {
+        console.log(`${numero} é positivo, mas não é ímpar (é par).`)
+    } else {
+        console.log(`${numero} não é positivo e ímpar.`)
+    }
+}
+
+verificaSeEhPositivoEImpar(9)
+````
+
+### 19) Implemente um programa que determine se um ano fornecido pelo usuário é bissexto ou não, considerando as regras: (a) Anos divisíveis por 4 são bissextos; (b) Anos divisíveis por 100 não são bissextos, a menos que também sejam divisíveis por 400.
+````javascript
+let anoUsuario = parseInt(prompt("Digite um ano para verificar se ele é bissexto ou não!"))
+const verificaAnoBissexto = () => {
+    if ((anoUsuario % 4 === 0 && anoUsuario % 100 !== 0) || (anoUsuario % 400 === 0)) {
+        window.alert(`O ano de ${anoUsuario} é bissexto!`)
+    } else {
+        window.alert(`O ano de ${anoUsuario} não é bissexto!`)
+    }
+}
+
+verificaAnoBissexto()
+````
+
+### 20) 
 ````javascript
 
 ````
 
-### 
+### 21) 
 ````javascript
 
 ````
 
-### 
+### 22) 
 ````javascript
 
 ````
