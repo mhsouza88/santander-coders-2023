@@ -363,27 +363,111 @@ const geraFibonacciAteMil = () => {
 geraFibonacciAteMil()
 ````
 
-###
+### 25) Escreva um programa que calcule a média de uma lista de números. O usuário deve fornecer quantos números deseja inserir, e em seguida, inserir os números.
+````javascript
+const calculaMedia = () => {
+    let totalNumeros = parseInt(prompt("Quantos números você deseja inserir?"))
+    let soma = 0
+    for (let i = 0; i < totalNumeros; i++) {
+        let numero = parseFloat(prompt(`Digite o número ${i + 1} de ${totalNumeros}: `))
+        soma += numero
+    }
+    let media = soma / totalNumeros
+    window.alert(`A média dos números fornecidos é ${media}.`)
+}
+
+calculaMedia()
+````
+
+### 26) Escreva um programa que peça ao usuário para adivinhar um número secreto entre 1 e 100. O programa deve fornecer dicas como "maior" ou "menor" até que o jogador adivinhe corretamente.
+````javascript
+const adivinheONumero = () => {
+    const numeroSecreto = Math.floor(Math.random() * 100) + 1
+    let tentativas = 0
+    let acertou = false
+    while (!acertou) {
+        let palpite = parseInt(prompt("Adivinhe um número entre 1 e 100: "))
+        if (palpite < numeroSecreto) {
+           window.alert("Maior!")
+        } else if (palpite > numeroSecreto) {
+            window.alert("Menor!")
+        } else {
+            acertou = true
+            alert(`Parabéns! Você acertou o número em ${tentativas + 1} tentativas!`)
+        }
+        tentativas++
+    }
+}
+
+adivinheONumero()
+````
+
+### 27) Crie um programa que gere a sequência de números primos até um número fornecido pelo usuário.
 ````javascript
 
 ````
 
-###
+### 28)
 ````javascript
 
 ````
 
-###
+### 29)
 ````javascript
 
 ````
 
-###
+### 30)
 ````javascript
 
 ````
 
-###
+### 31)
+````javascript
+
+````
+
+### 32)
+````javascript
+
+````
+
+### 33)
+````javascript
+
+````
+
+### 34)
+````javascript
+
+````
+
+### 35)
+````javascript
+
+````
+
+### 36)
+````javascript
+
+````
+
+### 37)
+````javascript
+
+````
+
+### 38)
+````javascript
+
+````
+
+### 39)
+````javascript
+
+````
+
+### 40)
 ````javascript
 
 ````
