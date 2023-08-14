@@ -176,6 +176,118 @@ const arrayDeNumeros = [3, 42, 15, 8, 23, 99, 57]
 encontraMaiorNumero(arrayDeNumeros)
 ````
 
+### 13) Imprima os números de 1 a 10 utilizando um loop for.
+````javascript
+const imprimeDeUmADez = () => {
+    for(let i = 1; i <= 10; i++) {
+        console.log(i)
+    }
+}
+
+imprimeDeUmADez()
+````
+
+### 14) Imprima os números pares de 1 a 20 utilizando um loop for.
+````javascript
+const imprimeParesAteVinte = () => {
+    for(let i = 1; i <= 20; i++) {
+        if(i % 2 === 0) {
+            console.log(i)
+        }
+    }
+}
+
+imprimeParesAteVinte()
+````
+
+### 15) Calcule a soma dos números de 1 a 50 utilizando um loop for.
+````javascript
+const calculaSomaAteCinquenta = () => {
+    let soma = 0
+    for (let i = 1; i <= 50; i++) {
+        soma += i
+    }
+    return soma
+}
+
+console.log(`A soma dos números de 1 a 50 é ${calculaSomaAteCinquenta()}.`)
+````
+
+### 16) Imprima a tabuada do 7 utilizando um loop for.
+````javascript
+const imprimeTabuadaDoSete = () => {
+    for (let i = 1; i <= 10; i++) {
+        console.log(`7 x ${i} = ${7 * i}`)
+    }
+}
+
+imprimeTabuadaDoSete()
+````
+
+### 17) Escreva um programa que solicite ao usuário um número e imprima a sequência de números de 1 até o número inserido, utilizando um loop for.
+````javascript
+const imprimeSequencia = () => {
+    const numero = parseInt(prompt("Digite um número: "))
+    for (let i = 1; i <= numero; i++) {
+        console.log(i)
+    }
+}
+
+imprimeSequencia()
+````
+
+### 18) Escreva um programa que solicite ao usuário um número e verifique se ele é primo.
+````javascript
+const ehPrimo = () => {
+    const numero = parseInt(prompt("Digite um número para saber se ele é primo ou não: "))
+    if (numero <= 1) {
+        window.alert(`${numero} não é um número primo.`)
+        return
+    }
+    for (let i = 2; i < numero; i++) {
+        if (numero % i === 0) {
+            window.alert(`${numero} não é um número primo.`)
+            return
+        }
+    }
+    window.alert(`${numero} é um número primo!`)
+}
+
+ehPrimo()
+````
+
+### 19) Crie um programa que gere a sequência de Fibonacci até o décimo termo. (Dica: o próximo termo é a soma dos dois termos anteriores)
+````javascript
+const fibonacci = () => {
+    let termos = [0, 1]
+    for(let i = 2; i < 10; i++) {
+        termos[i] = termos[i-1] + termos[i-2]
+    }
+    console.log(termos)
+}
+
+fibonacci()
+````
+
+### 20) Crie um programa que solicite ao usuário um número e calcule o fatorial desse número.
+````javascript
+const calculaFatorial = () => {
+    const numero = parseInt(prompt("Digite um número para calcular o fatorial: "))
+    let fatorial = 1
+    for(let i = 1; i <= numero; i++) {
+        fatorial *= i
+    }
+    window.alert(`O fatorial de ${numero} é ${fatorial}.`)
+}
+
+calculaFatorial()
+````
+
+###
+````javascript
+
+````
+
 ###
 ````javascript
 
