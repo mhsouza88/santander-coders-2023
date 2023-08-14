@@ -283,24 +283,84 @@ const calculaFatorial = () => {
 calculaFatorial()
 ````
 
-###
+### 21) Escreva um programa que imprima a seguinte série: 1, 3, 6, 10, 15, 21, ..., onde cada número é a soma dos números naturais consecutivos.
 ````javascript
+const imprimeSomaConsecutivos = () => {
+    let soma = 0
+    for (let i = 1; i <= 10; i++) {
+        soma += i
+        console.log(soma)
+    }
+}
 
+imprimeSomaConsecutivos()
 ````
 
-###
+### 22) Crie um programa que encontre e imprima todos os números perfeitos de 1 a 1000. Um número perfeito é aquele cuja soma de seus divisores (excluindo ele mesmo) é igual ao próprio número.
 ````javascript
+const encontraNumerosPerfeitos = () => {
+    const encontraDivisores = numero => {
+        let divisores = []
+        for (let i = 1; i <= numero / 2; i++) {
+            if (numero % i === 0) {
+                divisores.push(i)
+            }
+        }
+        return divisores
+    }
+    const ehPerfeito = numero => {
+        const divisores = encontraDivisores(numero)
+        const somaDivisores = divisores.reduce((acc, curr) => acc + curr, 0)
+        return somaDivisores === numero
+    }
+    for (let i = 1; i <= 1000; i++) {
+        if (ehPerfeito(i)) {
+            console.log(i)
+        }
+    }
+}
 
+encontraNumerosPerfeitos()
 ````
 
-###
+### 23) Crie um jogo em que o computador escolhe um número aleatório entre 1 e 100, e o jogador deve adivinhar qual é esse número. O jogo deve fornecer dicas informando se o número a ser adivinhado é maior ou menor do que o palpite do jogador, e o jogo deve continuar até que o jogador acerte o número.
 ````javascript
+const jogoAdivinhacao = () => {
+    const numeroAleatorio = Math.floor(Math.random() * 100) + 1
+    const fazerPalpite = () => {
+        const palpite = parseInt(prompt("Adivinhe o número entre 1 e 100:"))
+        if (palpite === numeroAleatorio) {
+            alert("Parabéns! Você acertou!")
+            return
+        }
+        if (palpite < numeroAleatorio) {
+            alert("O número é maior que " + palpite)
+        } else {
+            alert("O número é menor que " + palpite)
+        }
+        fazerPalpite()
+    }
+    fazerPalpite()
+}
 
+jogoAdivinhacao()
 ````
 
-###
+### 24) Crie um programa que gere a sequência de números de Fibonacci usando um loop while até que o próximo termo seja maior que 1000.
 ````javascript
+const geraFibonacciAteMil = () => {
+    let termo1 = 0
+    let termo2 = 1
+    let proximoTermo = termo1 + termo2
+    while (proximoTermo <= 1000) {
+        console.log(proximoTermo)
+        termo1 = termo2
+        termo2 = proximoTermo
+        proximoTermo = termo1 + termo2
+    }
+}
 
+geraFibonacciAteMil()
 ````
 
 ###
