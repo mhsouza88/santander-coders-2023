@@ -404,70 +404,287 @@ adivinheONumero()
 
 ### 27) Crie um programa que gere a sequência de números primos até um número fornecido pelo usuário.
 ````javascript
+const geraNumerosPrimos = () => {
+    const ehPrimo = (num) => {
+        if (num <= 1) return false
+        if (num <= 3) return true
+        if (num % 2 === 0 || num % 3 === 0) return false
+        let i = 5
+        while (i * i <= num) {
+            if (num % i === 0 || num % (i + 2) === 0) return false
+            i += 6
+        }
+        return true
+    }
+    const limite = parseInt(prompt("Digite o número limite para a sequência de primos: "))
+    let primos = []
+    for (let i = 2; i <= limite; i++) {
+        if (ehPrimo(i)) {
+            primos.push(i)
+        }
+    }
+    window.alert(`Números primos até ${limite}: ${primos.join(', ')}`)
+}
 
+geraNumerosPrimos()
 ````
 
-### 28)
+### 28) Escreva um código JavaScript que utilize um laço de repetição while para imprimir os números pares de 0 a 10.
 ````javascript
+const imprimePares = () => {
+    let numero = 0
+    while (numero <= 10) {
+        if (numero % 2 === 0) {
+            console.log(numero)
+        }
+        numero++
+    }
+}
 
+imprimePares()
 ````
 
-### 29)
+### 29) Escreva um código JavaScript que solicite ao usuário um número e utilize um laço de repetição do-while para verificar se o número inserido é uma potência de 2.
 ````javascript
+const verificaPotenciaDe2 = () => {
+    let numero = parseInt(prompt("Digite um número para saber se ele é uma potência de 2!"))
+    do {
+        if (numero === 1) {
+            alert("O número é uma potência de 2!")
+            return
+        } else if (numero < 1) {
+            break
+        }
+        numero = numero / 2
+    } while (numero >= 1)
+    window.alert("O número não é uma potência de 2.")
+}
 
+verificaPotenciaDe2()
 ````
 
-### 30)
+### 30) Escreva um código JavaScript que utilize um laço de repetição while para calcular a soma dos números de 1 a 100 e exiba o resultado.
 ````javascript
+const calculaSoma = () => {
+    let soma = 0
+    let contador = 1
+    while (contador <= 100) {
+        soma += contador
+        contador++
+    }
+    console.log(`A soma dos números de 1 a 100 é ${soma}.`)
+}
 
+calculaSoma()
 ````
 
-### 31)
+### 31) Peça ao usuário para digitar uma letra. Use uma estrutura condicional para verificar se a letra é uma vogal ou uma consoante. Exiba uma mensagem indicando se a letra é uma vogal ou consoante.
 ````javascript
+const verificaLetra = () => {
+    let letra = prompt("Digite uma letra:").toLowerCase()
+    if (["a", "e", "i", "o", "u"].includes(letra)) {
+        window.alert("Você digitou uma vogal!")
+    } else if ((letra >= 'a' && letra <= 'z') || (letra >= 'A' && letra <= 'Z')) {
+        window.alert("Você digitou uma consoante!")
+    } else {
+       window.alert("Isso não é uma letra válida!")
+    }
+}
 
+verificaLetra()
 ````
 
-### 32)
+### 32) Peça ao usuário para digitar dois números e uma operação matemática (+, -, *, /). Use uma estrutura condicional para realizar a operação selecionada nos números dados. Exiba o resultado da operação.
 ````javascript
+const realizaOperacao = () => {
+    const numero1 = parseFloat(prompt("Digite o primeiro número: "))
+    const numero2 = parseFloat(prompt("Digite o segundo número: "))
+    const operacao = prompt("Digite uma operação matemática (+, -, *, /): ")
+    let resultado
+    switch (operacao) {
+        case '+':
+            resultado = numero1 + numero2
+            break
+        case '-':
+            resultado = numero1 - numero2
+            break
+        case '*':
+            resultado = numero1 * numero2
+            break
+        case '/':
+            if (numero2 !== 0) {
+                resultado = numero1 / numero2
+            } else {
+                window.alert("Divisão por zero não é permitida!")
+                return
+            }
+            break
+        default:
+            window.alert("Operação inválida!")
+            return
+    }
+    window.alert(`O resultado de ${numero1} ${operacao} ${numero2} é ${resultado}.`)
+}
 
+realizaOperacao()
 ````
 
-### 33)
+### 33) Peça ao usuário para digitar um número. Use uma estrutura condicional para verificar se o número é primo (divisível apenas por 1 e por ele mesmo). Exiba uma mensagem indicando se o número é primo ou não.
 ````javascript
+const verificaSeNumeroEhPrimo = () => {
+    const ehPrimo = num => {
+        if (num <= 1) return false
+        if (num <= 3) return true
+        if (num % 2 === 0 || num % 3 === 0) return false
+        let i = 5
+        while (i * i <= num) {
+            if (num % i === 0 || num % (i + 2) === 0) return false
+            i += 6
+        }
+        return true
+    }
+    const numero = parseInt(prompt("Digite um número:"))
+    if (ehPrimo(numero)) {
+        window.alert(`${numero} é um número primo!`)
+    } else {
+        window.alert(`${numero} não é um número primo.`)
+    }
+}
 
+verificaSeNumeroEhPrimo()
 ````
 
-### 34)
+### 34) Peça ao usuário para digitar uma temperatura em graus Celsius. Use uma estrutura condicional para converter a temperatura para Fahrenheit ou Kelvin, de acordo com a escolha do usuário. Exiba o resultado da conversão.
 ````javascript
+const converteTemperatura = () => {
+    const celsius = parseFloat(prompt("Digite uma temperatura em graus Celsius: "))
+    const escolha = prompt("Você deseja converter para Fahrenheit (F) ou Kelvin (K)?").toUpperCase()
+    if (escolha === "F") {
+        const fahrenheit = (celsius * 9/5) + 32
+        window.alert(`A temperatura em Fahrenheit é ${fahrenheit}°F.`)
+    } else if (escolha === "K") {
+        const kelvin = celsius + 273.15
+        window.alert(`A temperatura em Kelvin é ${kelvin}K.`)
+    } else {
+        window.alert("Escolha inválida!")
+    }
+}
 
+converteTemperatura()
 ````
 
-### 35)
+### 35) Peça ao usuário para digitar um número de 1 a 7 representando um dia da semana. Use uma estrutura condicional switch para exibir o nome completo do dia da semana correspondente ao número digitado.
 ````javascript
+const diaDaSemana = () => {
+    const numero = parseInt(window.prompt("Digite um número de 1 a 7 representando um dia da semana:"))
+    switch(numero) {
+        case 1:
+            window.alert("Domingo")
+            break
+        case 2:
+            window.alert("Segunda-feira")
+            break
+        case 3:
+            window.alert("Terça-feira")
+            break
+        case 4:
+            window.alert("Quarta-feira")
+            break
+        case 5:
+            window.alert("Quinta-feira")
+            break
+        case 6:
+            window.alert("Sexta-feira")
+            break
+        case 7:
+            window.alert("Sábado")
+            break
+        default:
+            window.alert("Número inválido!")
+    }
+}
 
+diaDaSemana()
 ````
 
-### 36)
+### 36) Peça ao usuário para digitar um ano. Use uma estrutura condicional para verificar se o ano é bissexto (divisível por 4 e não por 100, exceto se for divisível por 400). Exiba uma mensagem indicando se o ano é bissexto ou não.
 ````javascript
+const verificaAnoBissexto = () => {
+    const ano = parseInt(window.prompt("Digite um ano: "))
+    if ((ano % 4 === 0 && ano % 100 !== 0) || ano % 400 === 0) {
+        window.alert(`${ano} é um ano bissexto!`)
+    } else {
+        window.alert(`${ano} não é um ano bissexto.`)
+    }
+}
 
+verificaAnoBissexto()
 ````
 
-### 37)
+### 37) Peça ao usuário para digitar uma palavra ou frase. Use uma estrutura condicional para contar o número de vogais e consoantes na entrada. Exiba os resultados separadamente.
 ````javascript
+const contaVogaisEConsoantes = () => {
+    const entrada = window.prompt("Digite uma palavra ou frase: ")
+    let vogais = 0
+    let consoantes = 0
+    for (let char of entrada.toLowerCase()) {
+        if ('aeiou'.includes(char)) {
+            vogais++
+        } else if (char >= 'a' && char <= 'z') {
+            consoantes++
+        }
+    }
+    window.alert(`Número de vogais: ${vogais}\nNúmero de consoantes: ${consoantes}`)
+}
 
+contaVogaisEConsoantes()
 ````
 
-### 38)
+### 38) Peça ao usuário para digitar um número. Use uma estrutura condicional para verificar se o número é positivo, negativo ou zero. Exiba uma mensagem indicando a natureza do número.
 ````javascript
+const verificaNumero = () => {
+    const numero = parseFloat(window.prompt("Digite um número: "))
+    if (numero > 0) {
+        window.alert("O número é positivo.")
+    } else if (numero < 0) {
+        window.alert("O número é negativo.")
+    } else {
+        window.alert("O número é zero.")
+    }
+}
 
+verificaNumero()
 ````
 
-### 39)
+### 39) Peça ao usuário para digitar sua idade e se tem cartão de estudante (responda com "sim" ou "não"). Use uma estrutura condicional para determinar o preço do bilhete de cinema de acordo com as regras: menores de 18 anos pagam $5, estudantes pagam $8 e os demais pagam $10. Exiba o preço do bilhete.
 ````javascript
+const verificaPrecoBilhete = () => {
+    const idade = parseInt(window.prompt("Digite sua idade:"))
+    const estudante = window.prompt("Você tem cartão de estudante? (sim ou não)").toLowerCase()
+    if (idade < 18) {
+        window.alert("O preço do bilhete é $5.")
+    } else if (estudante === "sim") {
+        window.alert("O preço do bilhete é $8.")
+    } else {
+        window.alert("O preço do bilhete é $10.")
+    }
+}
 
+verificaPrecoBilhete()
 ````
 
-### 40)
+### 40) Peça ao usuário para digitar uma palavra ou frase. Use uma estrutura condicional para verificar se a entrada é um palíndromo (lê-se igual de trás para frente e de frente para trás). Exiba uma mensagem indicando se a entrada é um palíndromo ou não.
 ````javascript
+const verificaPalindromo = () => {
+    const entrada = prompt("Digite uma palavra ou frase: ")
+    const limpo = entrada.replace(/[\W_]/g, '').toLowerCase()
+    const invertido = limpo.split('').reverse().join('')
+    if (limpo === invertido) {
+        window.alert("É um palíndromo!")
+    } else {
+        window.alert("Não é um palíndromo.")
+    }
+}
 
+verificaPalindromo()
 ````
