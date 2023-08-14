@@ -139,3 +139,79 @@ const concatenaStrings = () => {
 
 concatenaStrings()
 ````
+
+### 11) Dado um array de objetos representando despesas com propriedades como valor e categoria, use o método reduce() para calcular o total de despesas de uma categoria específica.
+````javascript
+const calculaDespesasPorCategoria = (categoria) => {
+    const despesas = [
+        { valor: 100, categoria: "alimentação" },
+        { valor: 50, categoria: "transporte" },
+        { valor: 200, categoria: "alimentação" },
+        { valor: 30, categoria: "lazer" },
+        { valor: 10, categoria: "transporte" }
+    ]
+    const totalDespesas = despesas.reduce((acumulador, despesa) => {
+        if (despesa.categoria === categoria) {
+            return acumulador + despesa.valor
+        } else {
+            return acumulador
+        }
+    }, 0)
+    console.log(`O total gasto em ${categoria} foi de R$${totalDespesas}.`)
+}
+
+calculaDespesasPorCategoria("alimentação")
+````
+
+### 12) Dado um array de números, use o método reduce() para encontrar o maior número no array.
+````javascript
+const encontraMaiorNumero = (numeros) => {
+    const maior = numeros.reduce((maiorAtual, numeroAtual) => {
+        return numeroAtual > maiorAtual ? numeroAtual : maiorAtual
+    })
+    console.log(`O maior número entre ${arrayDeNumeros} é ${maior}!`)
+}
+
+const arrayDeNumeros = [3, 42, 15, 8, 23, 99, 57]
+encontraMaiorNumero(arrayDeNumeros)
+````
+
+###
+````javascript
+
+````
+
+###
+````javascript
+
+````
+
+###
+````javascript
+
+````
+
+###
+````javascript
+
+````
+
+###
+````javascript
+
+````
+
+###
+````javascript
+
+````
+
+###
+````javascript
+
+````
+
+###
+````javascript
+
+````
