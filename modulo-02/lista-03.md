@@ -50,29 +50,65 @@ const numeros = [5, 3, 9, 2, 7]
 console.log(media(numeros)) 
 ````
 
-### 07)
+### 07) Crie uma função que verifique se uma palavra é um palíndromo (lê-se igual de trás para frente).
 ````javascript
+const ehPalindromo = palavra => {
+    const palavraInvertida = palavra.split('').reverse().join('')
+    return palavra === palavraInvertida
+}
 
+const teste = "arara"
+console.log(ehPalindromo(teste))
 ````
 
-### 08)
+### 08) Escreva uma função que conte quantas vezes uma determinada letra aparece em uma string.
 ````javascript
+const contaOcorrenciasDeLetra = (frase, letraParaContar) => {
+    const contaLetra = (str, letra) => str.split('').filter(l => l === letra).length
+    return `A letra '${letraParaContar}' aparece ${contaLetra(frase, letraParaContar)} vezes.`
+}
 
+console.log(contaOcorrenciasDeLetra("A perseverança é a chave para o sucesso.", "a"))
 ````
 
-### 09)
+### 09) Crie uma função que calcule o fatorial de um número.
 ````javascript
+const fatorial = (num) => {
+    if (num === 0) return 1
+    let resultado = 1
+    for (let i = 1; i <= num; i++) {
+        resultado *= i
+    }
+    return resultado
+}
 
+console.log(fatorial(5))
 ````
 
-### 10)
+### 10) Escreva uma função que converta graus Celsius para Fahrenheit.
 ````javascript
+const converterTemperatura = () => {
+    const celsiusParaFahrenheit = celsius => (celsius * 9/5) + 32
+    console.log(celsiusParaFahrenheit(0)) 
+}
 
+converterTemperatura()
 ````
 
-### 11)
+### 11) Crie uma função que encontre o valor mínimo e máximo em um array de números.
 ````javascript
+const encontrarMinMax = (arr) => {
+    const min = arr.reduce((a, b) => Math.min(a, b))
+    const max = arr.reduce((a, b) => Math.max(a, b))
+    return {
+        min: min,
+        max: max
+    }
+}
 
+const numeros = [3, 1, 4, 1, 5, 9, 2, 6, 5]
+const resultado = encontrarMinMax(numeros)
+console.log(`Mínimo: ${resultado.min}, Máximo: ${resultado.max}`)
 ````
 
 ### 12)
