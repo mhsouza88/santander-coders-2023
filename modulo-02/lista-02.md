@@ -352,6 +352,8 @@ const geraFibonacciAteMil = () => {
     let termo1 = 0
     let termo2 = 1
     let proximoTermo = termo1 + termo2
+    console.log(termo1)
+    console.log(termo2)
     while (proximoTermo <= 1000) {
         console.log(proximoTermo)
         termo1 = termo2
