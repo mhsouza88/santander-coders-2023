@@ -124,42 +124,111 @@ const fibonacci = (numero) => {
 console.log(fibonacci(13))
 ````
 
-### 13)
+### 13) Crie uma função que verifique se um número é primo.
 ````javascript
+const ehPrimo = (numero) => {
+    if (numero <= 1) return false
+    if (numero <= 3) return true
+    if (numero % 2 === 0 || numero % 3 === 0) return false
+    let contador = 5
+    while (contador * contador <= numero) {
+        if (numero % contador === 0 || numero % (contador + 2) === 0) return false
+        contador += 6
+    }
+    return true
+}
 
+console.log(ehPrimo(5))
+console.log(ehPrimo(6)) 
 ````
 
-### 14)
+### 14) Escreva uma função que remova os elementos duplicados de um array.
 ````javascript
+const eliminarDuplicados = () => {
+    const removeDuplicados = arr => arr.filter((item, index) => arr.indexOf(item) === index)
+    let numeros = [1, 2, 3, 2, 4, 5, 5]
+    let numerosUnicos = removeDuplicados(numeros)
+    console.log(numerosUnicos)
+}
 
+eliminarDuplicados()
 ````
 
-### 15)
+### 15) Crie uma função que ordene um array de números em ordem crescente.
 ````javascript
+const mostrarOrdenado = () => {
+    const ordenarCrescente = arr => arr.sort((a, b) => a - b)
+    let numeros = [34, 5, 23, 2, 45, 7]
+    let numerosOrdenados = ordenarCrescente(numeros)
+    console.log(numerosOrdenados)
+}
 
+mostrarOrdenado()
 ````
 
-### 16)
+### 16) Escreva uma função que retorne o número de dias entre duas datas.
 ````javascript
+const diasEntreDatas = (data1, data2) => {
+    const formatarData = (dataString) => {
+        const data = new Date(dataString)
+        const dia = data.getDate().toString().padStart(2, '0')
+        const mes = (data.getMonth() + 1).toString().padStart(2, '0') 
+        const ano = data.getFullYear()
+        return `${dia}/${mes}/${ano}`
+    }
+    const umDia = 1000 * 60 * 60 * 24
+    const diferenca = Math.abs(new Date(data2) - new Date(data1))
+    const data1Formatada = formatarData(data1)
+    const data2Formatada = formatarData(data2)
+    console.log(`A diferença de dias entre ${data1Formatada} e ${data2Formatada} é de ${Math.floor(diferenca / umDia)} dias.`)
+}
 
+diasEntreDatas("2022-05-05", "2023-10-14")
 ````
 
-### 17)
+### 17) Crie uma função que calcule o raio de um círculo com base em sua área.
 ````javascript
+const obterRaioDoCirculo = () => {
+    const calcularRaio = area => {
+        return Math.sqrt(area / Math.PI)
+    }
+    const area = 50
+    console.log(`O raio de um círculo com a área de ${area} é aproximadamente ${calcularRaio(area).toFixed(2)}.`)
+}
 
+obterRaioDoCirculo()
 ````
 
-### 18)
+### 18) Escreva uma função que encontre o segundo maior valor em um array de números.
 ````javascript
+const segundoMaior = () => {
+    const numeros = [10, 5, 8, 12, 15, 15, 8]
+    const maiorValor = Math.max(...numeros)
+    const numerosSemMaior = numeros.filter(num => num !== maiorValor)
+    const segundoMaiorValor = Math.max(...numerosSemMaior)
+    console.log(`O segundo maior valor no array de ${numeros} é ${segundoMaiorValor}.`)
+}
 
+segundoMaior()
 ````
 
-### 19)
+### 19) Crie uma função que converta um valor em dólares para outra moeda com base em uma taxa de câmbio.
 ````javascript
+const converterDolares = (valorEmDolares, taxaCambio) => {
+    let valorConvertido = valorEmDolares * taxaCambio
+    console.log(`U$${valorEmDolares} convertidos para Reais fica em R$${valorConvertido}.`)
+}
 
+converterDolares(100, 5.25)
 ````
 
-### 20)
+### 20) Escreva uma função que verifique se duas strings são anagramas (contêm as mesmas letras, mas em ordens diferentes).
 ````javascript
+const saoAnagramas = (str1, str2) => {
+    const organizarString = str => str.replace(/[\W_]/g, '').toLowerCase().split('').sort().join('')
+    return organizarString(str1) === organizarString(str2)
+}
 
+console.log(saoAnagramas('amor', 'Roma'))
+console.log(saoAnagramas('Jujuba', 'Bola'))
 ````
