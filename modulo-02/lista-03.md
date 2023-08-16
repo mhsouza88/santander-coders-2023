@@ -111,9 +111,17 @@ const resultado = encontrarMinMax(numeros)
 console.log(`Mínimo: ${resultado.min}, Máximo: ${resultado.max}`)
 ````
 
-### 12)
+### 12) Escreva uma função que calcule a sequência de Fibonacci até um determinado número de termos.
 ````javascript
+const fibonacci = (numero) => {
+    let sequencia = [0, 1]
+    for (let i = 2; i < numero; i++) {
+        sequencia.push(sequencia[i - 1] + sequencia[i - 2])
+    }
+    return sequencia.slice(0, numero)
+}
 
+console.log(fibonacci(13))
 ````
 
 ### 13)
