@@ -26,7 +26,6 @@ console.log(`O resultado do produto é ${resultado}.`)
 const ehPar = numero => numero % 2 === 0 ? "Par" : "Ímpar"
 const resultado = ehPar(7)
 console.log(`O número é ${resultado}.`)
-
 ````
 
 ### 04) Escreva uma função que inverta uma string (por exemplo, "hello" se torna "olleh").
