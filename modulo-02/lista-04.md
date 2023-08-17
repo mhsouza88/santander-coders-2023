@@ -1,7 +1,11 @@
 # ✩ Lista 04 de exercícios de Javascript ✩
-### 01)
+### 01) Crie uma função chamada executarCallback que recebe uma função de callback como argumento e a executa.
 ````javascript
+const executarCallback = (callback) => {
+    callback()
+}
 
+executarCallback(() => console.log("Oi, eu sou um callback!"))
 ````
 
 ### 02)
@@ -65,36 +69,6 @@
 ````
 
 ### 14)
-````javascript
-
-````
-
-### 15)
-````javascript
-
-````
-
-### 16)
-````javascript
-
-````
-
-### 17)
-````javascript
-
-````
-
-### 18)
-````javascript
-
-````
-
-### 19)
-````javascript
-
-````
-
-### 20)
 ````javascript
 
 ````
