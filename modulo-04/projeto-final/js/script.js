@@ -59,13 +59,11 @@ function criarFormulario() {
   );
   const botaoEnviar = criarElemento("button", "btn btn-primary mt-3", "Enviar");
   botaoEnviar.addEventListener("click", function () {
-    // Pega os valores dos inputs e do checkbox
     const nome = document.getElementById("nome").value;
     const email = document.getElementById("email").value;
     const cep = document.getElementById("cep").value;
     const consentimento = document.getElementById("consentimento").checked;
 
-    // Verifica se todos os campos estão preenchidos e o checkbox está marcado
     if (nome && email && cep && consentimento) {
         cardDiv.style.display = "none";
         localStorage.setItem("formularioEnviado", "true");
